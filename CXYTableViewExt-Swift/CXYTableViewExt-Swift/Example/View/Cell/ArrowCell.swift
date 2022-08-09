@@ -11,26 +11,17 @@ class ArrowCell: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var detail: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }
 
 extension ArrowCell: CXYTableItemProtocol {
     static func heightForItem(data: Any?) -> CGFloat {
-        return 44
+        return 50
     }
     
     func configItem(data: Any?) {
-        
+        if let model = data as? SettingModel {
+            self.title.text = model.title
+            self.detail.text = model.detail
+        }
     }
 }

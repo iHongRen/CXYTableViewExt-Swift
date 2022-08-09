@@ -9,21 +9,14 @@ import UIKit
 
 class TextCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
+    @IBOutlet weak var title: UILabel!
 }
 
 extension TextCell: CXYTableItemProtocol {
-    static func heightForItem(data: Any?) -> CGFloat {
-        return 100
+    
+    func configItem(data: Any?) {
+        if let model = data as? Int {
+            self.title.text = "\(model)"
+        }
     }
 }

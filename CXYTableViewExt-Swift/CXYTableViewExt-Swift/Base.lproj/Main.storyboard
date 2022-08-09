@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kgp-eY-fxT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kgp-eY-fxT">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,23 +12,26 @@
         <scene sceneID="7jO-jX-zMr">
             <objects>
                 <viewController id="CfX-Qj-e4V" customClass="SettingController" customModule="CXYTableViewExt_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BA1-BO-Zcz"/>
+                        <viewControllerLayoutGuide type="bottom" id="oFH-fj-F9S"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="OeT-pQ-dkE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TG3-1g-tqo">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="separatorColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="GbE-Yg-IRX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="TG3-1g-tqo" firstAttribute="top" secondItem="GbE-Yg-IRX" secondAttribute="top" id="5lr-0Q-N4v"/>
-                            <constraint firstItem="GbE-Yg-IRX" firstAttribute="trailing" secondItem="TG3-1g-tqo" secondAttribute="trailing" id="Feg-sk-GRB"/>
-                            <constraint firstItem="TG3-1g-tqo" firstAttribute="leading" secondItem="GbE-Yg-IRX" secondAttribute="leading" id="c3B-8R-zNd"/>
-                            <constraint firstItem="GbE-Yg-IRX" firstAttribute="bottom" secondItem="TG3-1g-tqo" secondAttribute="bottom" id="nLG-a8-RdU"/>
+                            <constraint firstItem="TG3-1g-tqo" firstAttribute="top" secondItem="BA1-BO-Zcz" secondAttribute="bottom" id="5lr-0Q-N4v"/>
+                            <constraint firstAttribute="trailing" secondItem="TG3-1g-tqo" secondAttribute="trailing" id="Feg-sk-GRB"/>
+                            <constraint firstItem="TG3-1g-tqo" firstAttribute="leading" secondItem="OeT-pQ-dkE" secondAttribute="leading" id="c3B-8R-zNd"/>
+                            <constraint firstItem="oFH-fj-F9S" firstAttribute="top" secondItem="TG3-1g-tqo" secondAttribute="bottom" id="nLG-a8-RdU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kdS-vx-Cwt"/>
@@ -40,22 +42,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="58o-K7-ySS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1163" y="-8"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CXYTableViewExt_Swift" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="SpW-oJ-Lmf"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1825" y="3"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qYj-tS-a3Q">
@@ -77,6 +63,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

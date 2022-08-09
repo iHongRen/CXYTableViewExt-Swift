@@ -11,9 +11,10 @@ class BaseTableController: UIViewController {
      
     lazy var tableView : UITableView = {
         let table = UITableView(frame: CGRect.zero, style: .plain)
-        table.backgroundColor = UIColor.white
+        table.backgroundColor = .white
         table.tableFooterView = UIView()
-        table.separatorColor = UIColor.red
+        table.separatorColor = .systemGray5
+        table.separatorInset = .zero
         table.delegate = self
         table.dataSource = self
         return table
@@ -66,4 +67,5 @@ extension BaseTableController : UITableViewDelegate {
     public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return tableView.t.reusableFooter(atSection: section)
     }
+  
 }
