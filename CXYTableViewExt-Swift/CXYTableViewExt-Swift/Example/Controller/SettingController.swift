@@ -33,17 +33,21 @@ class SettingController: UIViewController {
             make.addCellItem(cellClass: ArrowCell.self, data: SettingModel(title: "BaseTableController", detail: "基类实现代理")) { [weak self] data, indexPath in
                 self?.navigationController?.pushViewController(SubTableController(), animated: true)
             }
+            
             make.addCellItem(cellClass: ArrowCell.self, data: SettingModel(title: "Refresh&LoadMore", detail: "下拉刷新&加载更多")) { [weak self] data, indexPath in
-                
+                self?.navigationController?.pushViewController(RefreshController(), animated: true)
             }
-            make.addCellItem(cellClass: ArrowCell.self, data: SettingModel(title: "Header&Footer", detail: "section头和尾")) { [weak self] data, indexPath in
-                
-            }
+            
             make.addCellItem(cellClass: ArrowCell.self, data: SettingModel(title: "Custom CXYTableDataSource", detail: "自定义代理")) { [weak self] data, indexPath in
-                
+                self?.navigationController?.pushViewController(CustomController(), animated: true)
             }
+            
+            make.addCellItem(cellClass: ArrowCell.self, data: SettingModel(title: "Header&Footer", detail: "section头和尾")) { [weak self] data, indexPath in
+                self?.performSegue(withIdentifier: "HeaderFooterController", sender: nil)
+            }
+           
             make.addCellItem(cellClass: ArrowCell.self, data: SettingModel(title: "Editable", detail: "可编辑")) { [weak self] data, indexPath in
-                
+                self?.performSegue(withIdentifier: "EditableController", sender: nil)
             }
             
             make.addCellItem(cellClass: LineCell.self)
@@ -52,7 +56,7 @@ class SettingController: UIViewController {
              
             make.addCellItem(cellClass: LineCell.self, data: LineModel(height: 20))
             make.addCellItem(cellClass: ExitCell.self, data: "Exit(退出)") { data, indexPath in
-                
+                print("Exit Clicked")
             }
         }
         
@@ -74,7 +78,10 @@ extension SettingController: SwitchCellDelegate {
     func onSwitchChanged(data: SettingModel, isOn: Bool) {
         print("\(data.title) is changed")
         if self.noti.title == data.title {
-            // TODO: 😀
+            //TODO: request api  
+            self.noti.isOn = isOn
+        } else if self.top.title == data.title {
+            self.top.isOn = isOn
         }
     }
 }

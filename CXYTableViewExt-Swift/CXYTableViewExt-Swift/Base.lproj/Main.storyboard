@@ -8,6 +8,47 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Editable Controller-->
+        <scene sceneID="pbH-7M-Spj">
+            <objects>
+                <viewController id="IeA-mC-GdP" customClass="EditableController" customModule="CXYTableViewExt_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pVy-Gq-HKD"/>
+                        <viewControllerLayoutGuide type="bottom" id="eWX-SN-42p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="r5g-5Z-YMY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uHH-5x-wni">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uHH-5x-wni" firstAttribute="top" secondItem="pVy-Gq-HKD" secondAttribute="bottom" id="Chn-Q7-kpc"/>
+                            <constraint firstItem="eWX-SN-42p" firstAttribute="top" secondItem="uHH-5x-wni" secondAttribute="bottom" id="LhT-g3-rdG"/>
+                            <constraint firstItem="uHH-5x-wni" firstAttribute="leading" secondItem="r5g-5Z-YMY" secondAttribute="leading" id="OhI-eU-8oz"/>
+                            <constraint firstAttribute="trailing" secondItem="uHH-5x-wni" secondAttribute="trailing" id="UjZ-Cs-TGl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="k6H-Y4-pr1">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="wq2-5S-2e0">
+                            <connections>
+                                <action selector="onAdd:" destination="IeA-mC-GdP" id="5Ya-cF-LIc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="uHH-5x-wni" id="0AM-V5-FAW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o9a-mk-YT3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2040.5797101449277" y="714.50892857142856"/>
+        </scene>
         <!--Setting Controller-->
         <scene sceneID="7jO-jX-zMr">
             <objects>
@@ -37,11 +78,49 @@
                     <navigationItem key="navigationItem" id="kdS-vx-Cwt"/>
                     <connections>
                         <outlet property="tableView" destination="TG3-1g-tqo" id="gIG-cb-Oer"/>
+                        <segue destination="WyO-Ct-UtA" kind="show" identifier="HeaderFooterController" id="ZfY-fc-DeJ"/>
+                        <segue destination="IeA-mC-GdP" kind="show" identifier="EditableController" id="tZy-s5-UiK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="58o-K7-ySS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1163" y="-8"/>
+        </scene>
+        <!--Header Footer Controller-->
+        <scene sceneID="N1v-R0-EVB">
+            <objects>
+                <viewController id="WyO-Ct-UtA" customClass="HeaderFooterController" customModule="CXYTableViewExt_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b34-Xf-6Kr"/>
+                        <viewControllerLayoutGuide type="bottom" id="bpG-in-Hmb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LZN-JY-Jbg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ElB-Yo-PDB">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="separatorColor" systemColor="systemGray5Color"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bpG-in-Hmb" firstAttribute="top" secondItem="ElB-Yo-PDB" secondAttribute="bottom" id="IPw-8g-aXF"/>
+                            <constraint firstItem="ElB-Yo-PDB" firstAttribute="leading" secondItem="LZN-JY-Jbg" secondAttribute="leading" id="URp-al-Tyj"/>
+                            <constraint firstAttribute="trailing" secondItem="ElB-Yo-PDB" secondAttribute="trailing" id="Vko-Lk-1Av"/>
+                            <constraint firstItem="ElB-Yo-PDB" firstAttribute="top" secondItem="b34-Xf-6Kr" secondAttribute="bottom" id="cVl-vL-fac"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="IFc-UD-XHD"/>
+                    <connections>
+                        <outlet property="tableView" destination="ElB-Yo-PDB" id="Dzs-gm-sBL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8EZ-bq-kBC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2042" y="-13"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qYj-tS-a3Q">
@@ -63,6 +142,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

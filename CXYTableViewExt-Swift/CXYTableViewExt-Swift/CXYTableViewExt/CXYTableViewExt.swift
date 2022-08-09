@@ -440,11 +440,11 @@ public extension CXYTableNamespaceWrapper where T: UITableView {
  */
 public extension CXYTableNamespaceWrapper where T: UITableView {
     func numberOfSections() -> Int {
-        return table.m.sections.count
+        return max(1, table.m.sections.count)
     }
     
     func numberOfCellItems(atSection section: Int) -> Int {
-        if section > table.m.sections.count || 0 > section {
+        if section > table.m.sections.count || 0 > section || table.m.sections.isEmpty {
             return 0
         }
         return table.m.sections[section].cellItems.count
@@ -525,7 +525,18 @@ public extension CXYTableNamespaceWrapper where T: UITableView {
     }
 }
 
-
+public extension CXYTableNamespaceWrapper where T: UITableView  {
+    var vc: UIViewController? {
+        var parentResponder: UIResponder? = self.table
+        while parentResponder != nil {
+            parentResponder = parentResponder!.next
+            if let viewController = parentResponder as? UIViewController {
+                return viewController
+            }
+        }
+        return nil
+    }
+}
 
 
 /**

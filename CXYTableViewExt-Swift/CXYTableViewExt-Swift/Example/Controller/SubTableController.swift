@@ -9,6 +9,7 @@ import UIKit
 
 class SubTableController: BaseTableController {
 
+    var list = Array(1...30)
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "SubTable"
@@ -22,13 +23,13 @@ class SubTableController: BaseTableController {
     
     func configTable1() {
         self.tableView.t.makeConfig { make in
-            make.addCellItems(cellClass: TextCell.self, dataList: Array(1...100))
+            make.addCellItems(cellClass: TextCell.self, dataList: self.list)
         }
     }
     
     func configTable2() {
         self.tableView.t.removeItems()
-        self.tableView.t.addCellItems(cellClass: TextCell.self, dataList: Array(1...100))
+        self.tableView.t.addCellItems(cellClass: TextCell.self, dataList: self.list)
         self.tableView.reloadData()
     }
 }
@@ -37,7 +38,7 @@ extension SubTableController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        print(indexPath)
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -45,7 +46,13 @@ extension SubTableController {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        tableView.t.removeCellItem(indexPath: indexPath)
-        tableView.deleteRows(at: [indexPath], with: .fade)
+//        tableView.t.removeCellItem(indexPath: indexPath)
+//        tableView.deleteRows(at: [indexPath], with: .fade)
+        
+        let data = tableView.t.cellItemData(forIndexPath: indexPath)
+        print(data ?? 0)
+
+        self.list.remove(at: indexPath.row)
+        self.configTable1()
     }
 }

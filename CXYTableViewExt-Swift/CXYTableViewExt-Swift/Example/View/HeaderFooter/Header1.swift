@@ -7,14 +7,58 @@
 
 import UIKit
 
+protocol Header1Delegate {
+    func onArrowClick(data: Any?)
+}
+
 class Header1: UITableViewHeaderFooterView {
+    var data: Any?
+    weak var delegate :AnyObject?
+    
+    var title: UILabel = {
+        let title = UILabel(frame: CGRect(x: 15, y: 0, width: 200, height: 40))
+        title.textColor = .black
+        return title
+    }()
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    lazy var arrow: UIButton = {
+        let btn = UIButton(frame: CGRect(x: UIScreen.main.bounds.size.width-45, y: 0, width: 40, height: 40))
+        btn.addTarget(self, action: #selector(arrowClick), for: .touchUpInside)
+        btn.setImage(UIImage(systemName: "chevron.right"), for: .normal)
+        return btn
+    }() 
+    
+    override init(reuseIdentifier: String?) {
+        super.init(reuseIdentifier: reuseIdentifier)
+        self.contentView.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        
+        self.contentView.addSubview(self.title)
+        self.contentView.addSubview(self.arrow)
     }
-    */
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+     
+    
+    @objc func arrowClick() {
+        if let d = self.delegate as? Header1Delegate {
+            d.onArrowClick(data: self.data)
+        } 
+    }
+}
 
+extension Header1: CXYTableItemProtocol {
+    static func heightForItem(data: Any?) -> CGFloat {
+        return 40
+    }
+    
+    func configItem(data: Any?, indexPath: IndexPath, delegate: AnyObject?) {
+        self.data = data
+        self.delegate = delegate
+        
+        if let model = data as? String {
+            self.title.text = model
+        }
+    }
 }

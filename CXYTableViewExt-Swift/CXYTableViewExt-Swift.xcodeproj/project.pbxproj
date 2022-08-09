@@ -10,6 +10,10 @@
 		80469A1328A1EECF00245325 /* ExitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80469A1228A1EECF00245325 /* ExitCell.swift */; };
 		80469A1628A1F29D00245325 /* LineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80469A1528A1F29D00245325 /* LineModel.swift */; };
 		80469A1828A1F4F300245325 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80469A1728A1F4F300245325 /* SettingModel.swift */; };
+		80469A1A28A2332B00245325 /* RefreshController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80469A1928A2332B00245325 /* RefreshController.swift */; };
+		80469A1C28A2352200245325 /* CustomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80469A1B28A2352200245325 /* CustomController.swift */; };
+		80469A1E28A2372A00245325 /* HeaderFooterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80469A1D28A2372A00245325 /* HeaderFooterController.swift */; };
+		80469A2028A2457100245325 /* EditableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80469A1F28A2457100245325 /* EditableController.swift */; };
 		807992FA28A111B1009D3CC1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807992F928A111B1009D3CC1 /* SceneDelegate.swift */; };
 		807992FD28A11392009D3CC1 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807992FB28A11392009D3CC1 /* SwitchCell.swift */; };
 		807992FE28A11392009D3CC1 /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 807992FC28A11392009D3CC1 /* SwitchCell.xib */; };
@@ -40,6 +44,10 @@
 		80469A1228A1EECF00245325 /* ExitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitCell.swift; sourceTree = "<group>"; };
 		80469A1528A1F29D00245325 /* LineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineModel.swift; sourceTree = "<group>"; };
 		80469A1728A1F4F300245325 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
+		80469A1928A2332B00245325 /* RefreshController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshController.swift; sourceTree = "<group>"; };
+		80469A1B28A2352200245325 /* CustomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomController.swift; sourceTree = "<group>"; };
+		80469A1D28A2372A00245325 /* HeaderFooterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderFooterController.swift; sourceTree = "<group>"; };
+		80469A1F28A2457100245325 /* EditableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableController.swift; sourceTree = "<group>"; };
 		807992F928A111B1009D3CC1 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		807992FB28A11392009D3CC1 /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
 		807992FC28A11392009D3CC1 /* SwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
@@ -179,9 +187,13 @@
 		80D2D71F28A10B1300DF78BA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8079930528A118EC009D3CC1 /* SettingController.swift */,
 				80D2D72028A10B9A00DF78BA /* BaseTableController.swift */,
 				80D2D70028A103E000DF78BA /* SubTableController.swift */,
-				8079930528A118EC009D3CC1 /* SettingController.swift */,
+				80469A1928A2332B00245325 /* RefreshController.swift */,
+				80469A1B28A2352200245325 /* CustomController.swift */,
+				80469A1D28A2372A00245325 /* HeaderFooterController.swift */,
+				80469A1F28A2457100245325 /* EditableController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -269,14 +281,18 @@
 				80D2D71428A1055300DF78BA /* CXYTableViewExt.swift in Sources */,
 				807992FA28A111B1009D3CC1 /* SceneDelegate.swift in Sources */,
 				80D2D71628A1057F00DF78BA /* CXYTableSectionItem.swift in Sources */,
+				80469A1A28A2332B00245325 /* RefreshController.swift in Sources */,
 				80D2D71C28A105B700DF78BA /* CXYTableDataItem.swift in Sources */,
+				80469A1C28A2352200245325 /* CustomController.swift in Sources */,
 				80D2D72728A10D0500DF78BA /* Footer1.swift in Sources */,
+				80469A2028A2457100245325 /* EditableController.swift in Sources */,
 				80D2D72F28A10E3F00DF78BA /* LineCell.swift in Sources */,
 				80D2D72128A10B9A00DF78BA /* BaseTableController.swift in Sources */,
 				8079930128A11755009D3CC1 /* ArrowCell.swift in Sources */,
 				80D2D72C28A10D6700DF78BA /* TextCell.swift in Sources */,
 				80D2D72528A10CEA00DF78BA /* Header2.swift in Sources */,
 				80469A1328A1EECF00245325 /* ExitCell.swift in Sources */,
+				80469A1E28A2372A00245325 /* HeaderFooterController.swift in Sources */,
 				807992FD28A11392009D3CC1 /* SwitchCell.swift in Sources */,
 				80D2D71A28A105A900DF78BA /* CXYTableDataSource.swift in Sources */,
 				80D2D72928A10D1C00DF78BA /* Footer2.swift in Sources */,
