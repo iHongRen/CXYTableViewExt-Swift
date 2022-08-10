@@ -33,7 +33,7 @@ func configTable() {
 
 
 
-## Example(例子)
+## Example1 (例子1)
 
  <img src="imgs/setting.png" width="375">
 
@@ -127,7 +127,5 @@ struct LineModel {
 
 
 
-更多的例子，请看代码
-
-[demo]: https://github.com/iHongRen/CXYTableViewExt-Swift/tree/main/CXYTableViewExt-Swift/CXYTableViewExt-Swift/Example
+**更多的例子，请看代码 [Demo](https://github.com/iHongRen/CXYTableViewExt-Swift/tree/main/CXYTableViewExt-Swift/CXYTableViewExt-Swift/Example)**
 
