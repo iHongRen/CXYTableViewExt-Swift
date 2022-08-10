@@ -24,7 +24,6 @@ class Header1: UITableViewHeaderFooterView {
     lazy var arrow: UIButton = {
         let btn = UIButton(frame: CGRect(x: UIScreen.main.bounds.size.width-45, y: 0, width: 40, height: 40))
         btn.addTarget(self, action: #selector(arrowClick), for: .touchUpInside)
-        btn.setImage(UIImage(systemName: "chevron.right"), for: .normal)
         return btn
     }() 
     
@@ -57,8 +56,10 @@ extension Header1: CXYTableItemProtocol {
         self.data = data
         self.delegate = delegate
         
-        if let model = data as? String {
-            self.title.text = model
-        }
+        if let model = data as? SettingModel {
+            self.title.text = model.title
+            let name = model.isOn ? "chevron.down" : "chevron.up"
+            self.arrow.setImage(UIImage(systemName: name), for: .normal)
+        } 
     }
 }
