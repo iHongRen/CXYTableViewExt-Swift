@@ -3,6 +3,10 @@ Make UITableView configuration easier. 让你更简单的配置UITableView，极
 
 
 
+如果你在寻找 OC 版本的话，移步这里 https://github.com/iHongRen/CXYTableViewExt-OC
+
+
+
 ## Usage(使用) 
 
 1、Customize your Cell , then implement the **CXYTableItemProtocol** protocol
