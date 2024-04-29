@@ -572,10 +572,10 @@ private class Middle {
  */
 private extension UITableView {
     private struct AssociatedKeys {
-        static var kRegisteredClassesKey = "kRegisteredClassesKey"
-        static var kSectionsKey = "kSectionsKey"
-        static var kDataSourceKey = "kDataSourceKey"
-        static var kMiddleKey = "kMiddleKey"
+        static var kRegisteredClassesKey: UInt8 = 0
+        static var kSectionsKey: UInt8 = 0
+        static var kDataSourceKey: UInt8 = 0
+        static var kMiddleKey: UInt8 = 0
     }
     
     var registeredClasses: Dictionary<String, AnyClass> {
