@@ -7,6 +7,12 @@ Make UITableView configuration easier. 让你更简单的配置UITableView，极
 
 
 
+使用 **CocoaPods** - `pod install --repo-update`
+
+```ruby
+pod 'CXYTableViewExt-Swift'
+```
+
 ## Usage(使用) 
 
 1、Customize your Cell , then implement the **CXYTableItemProtocol** protocol
